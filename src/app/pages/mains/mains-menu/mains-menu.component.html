@@ -1,0 +1,24 @@
+<ion-header>
+  <mat-toolbar class="position-absolute" style="background: rgba(255,255,255,0); height: 80px; padding: 28px 0 0 0;">
+    <ion-menu-button menu="mains"></ion-menu-button>
+    <div>{{title}}</div>
+    <button mat-button class="ml-auto fa fa-chevron-circle-left" routerLink="/"></button>
+  </mat-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <div [ngStyle]="{'background-image': backgroundUrl}" class="pane  container-fluid">
+    <br><br><br><br>
+    <div class="row">
+      <div class="col-4 text-center" *ngFor="let one of linksCurrent">
+        <figure class="figure">
+          <img class="figure-img img-fluid img-thumbnail rounded mat-elevation-z5" [src]="one.imgUrl" style="cursor: pointer" (click)="goToPage(one)">
+          <figcaption class="figure-caption text-center">{{one.name}}</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+
+
+</ion-content>
+

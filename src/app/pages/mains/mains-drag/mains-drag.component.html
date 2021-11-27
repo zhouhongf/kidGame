@@ -1,0 +1,49 @@
+<ion-header>
+  <mat-toolbar class="position-absolute" style="background: rgba(255,255,255,0); height: 80px; padding: 28px 0 0 0;">
+    <ion-menu-button menu="mains"></ion-menu-button>
+    <div>{{title}}</div>
+    <button mat-button class="ml-auto fa fa-chevron-circle-left" [routerLink]="['/mains/menu', {param: '图片配对'}]"></button>
+  </mat-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <div class="pane container-fluid">
+    <br><br><br><br>
+    <div class="d-flex" style="height: 50px;">
+      <div class="align-self-center">已完成：</div>
+      <ion-avatar *ngIf="!showApple">
+        <img [src]="appleUrl">
+      </ion-avatar>
+      <ion-avatar *ngIf="!showGrape">
+        <img [src]="grapeUrl">
+      </ion-avatar>
+    </div>
+    <hr>
+    <h5>把水果移到正确的篮子里</h5>
+    <hr>
+
+    <div class="d-flex justify-content-around">
+      <div *ngIf="showApple" [ngStyle]="{'background-image': 'url(' + appleUrl + ')'}"  class="example-box" cdkDrag [cdkDragFreeDragPosition]="dragPositionOne" (cdkDragMoved)="doDragEvent($event, 'apple')"></div>
+      <div *ngIf="showGrape" [ngStyle]="{'background-image': 'url(' + grapeUrl + ')'}"  class="example-box" cdkDrag [cdkDragFreeDragPosition]="dragPositionTwo" (cdkDragMoved)="doDragEvent($event, 'grape')"></div>
+    </div>
+
+    <div class="d-flex justify-content-around" style="padding-top: 200px;">
+      <div class="d-flex justify-content-center">
+        <div [ngStyle]="{'background-image': basketUrl}" class="my-basket d-flex flex-column">
+          <h5 class="text-center mt-auto text-light font-weight-bolder" style="cursor: pointer" (click)="readMessage('葡萄篮')">葡萄篮</h5>
+        </div>
+      </div>
+      <div class="d-flex justify-content-center">
+        <div [ngStyle]="{'background-image': basketUrl}" class="my-basket d-flex flex-column">
+          <h5 class="text-center mt-auto text-light font-weight-bolder" style="cursor: pointer" (click)="readMessage('苹果篮')">苹果篮</h5>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="!showApple && !showGrape" class="text-center py-5">
+      <button mat-raised-button color="primary" (click)="changePosition()" class="px-4">再来一次</button>
+    </div>
+  </div>
+
+
+</ion-content>
+

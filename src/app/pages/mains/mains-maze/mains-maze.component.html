@@ -1,0 +1,29 @@
+<ion-header>
+  <mat-toolbar class="position-absolute" style="background: rgba(255,255,255,0); height: 80px; padding: 28px 0 0 0;">
+    <ion-menu-button menu="mains"></ion-menu-button>
+    <div>{{title}}</div>
+    <app-time-count *ngIf="!timeUp" class="ml-auto pr-2 small" [endTime]="timeEnd" (onTimeUp)="doTimeUp($event)"></app-time-count>
+  </mat-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <div class="pane container-fluid">
+    <br><br><br><br>
+    <h5>来试一试走走迷宫吧</h5>
+    <section style="text-align: center;" class="py-4">
+      <canvas id="canvas" style="border: 1px solid gray;">不支持canvas显示</canvas>
+    </section>
+
+    <div class="d-flex justify-content-center py-4">
+      <button mat-raised-button color="accent" class="m-2 px-5" (click)="getEraser()">重来</button>
+      <button mat-raised-button color="primary" class="m-2 px-5" routerLink="/">返回</button>
+    </div>
+    <div class="text-center">
+      <button mat-raised-button color="warn" class="m-2 px-5" (click)="drawResultRight()">显示正确路线</button>
+    </div>
+
+  </div>
+
+
+</ion-content>
+

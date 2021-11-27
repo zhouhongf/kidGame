@@ -1,0 +1,65 @@
+<ion-header>
+    <mat-toolbar #mainHeader class="position-absolute" style="background: rgba(255,255,255,0); height: 80px; padding: 28px 0 0 0;">
+        <ion-menu-button menu="mains" color="dark"></ion-menu-button>
+        <div>菜单</div>
+    </mat-toolbar>
+</ion-header>
+
+<ion-content [scrollEvents]="true" (ionScroll)="scrollEvent($event)">
+    <br><br><br><br>
+
+    <div class="py-5 text-center" style="min-height: 600px;">
+        <div class="row py-5">
+            <div class="col-sm-4 p-2">
+                <button mat-raised-button color="primary" class="my-button" [routerLink]="['/mains/menu', {param: '连线画图'}]">连线画图</button>
+            </div>
+            <div class="col-sm-4 p-2">
+                <button mat-raised-button color="primary" class="my-button" [routerLink]="['/mains/menu', {param: '五官学习'}]">五官学习</button>
+            </div>
+            <div class="col-sm-4 p-2">
+                <button mat-raised-button color="primary" class="my-button" [routerLink]="['/mains/menu', {param: '迷宫练习'}]">迷宫练习</button>
+            </div>
+            <div class="col-sm-4 p-2">
+                <button mat-raised-button color="primary" class="my-button" [routerLink]="['/mains/menu', {param: '图片配对'}]">图片配对</button>
+            </div>
+            <div class="col-sm-4 p-2">
+                <button mat-raised-button color="primary" class="my-button" [routerLink]="['/mains/menu', {param: '看图对话'}]">看图对话</button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="bg-light p-5 myslide" style="min-height: 600px;">
+        <br><br><br><br>
+        <div class="row p-5 text-center">
+            <div class="col-md-8">
+                <br><br>
+                <h3>苏州市新禾信息技术有限公司</h3>
+                <br>
+                <h5>门户网站、手机应用等，一站式定制服务；</h5>
+                <h5>定向数据挖掘服务；</h5>
+                <h5>数据清洗、数据分析、数据可视化服务。</h5>
+            </div>
+            <div class="col-md-4">
+                <img [src]="urlImageTwo">
+            </div>
+        </div>
+    </div>
+
+
+    <div class="bg-secondary" style="min-height: 300px;">
+        <h5 class="pt-5 pl-5">项目联系人</h5>
+        <hr>
+        <div class="row p-2">
+            <div class="col-sm-4 py-5 text-center">
+                <img [src]="urlCodeOne" class="figure-img img-fluid rounded">
+            </div>
+            <div class="col-sm-4 py-5 text-center">
+                <h4>周宏飞</h4>
+                <h5>技术总监</h5>
+                <h5>13771880835</h5>
+            </div>
+        </div>
+    </div>
+</ion-content>

@@ -1,0 +1,11 @@
+<ion-header>
+  <mat-toolbar style="height: 80px; padding: 28px 0 0 0;">
+    <ion-menu-button menu="mains" color="dark"></ion-menu-button>
+  </mat-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <h5 class="text-center text-info">{{dataShow?.title}}</h5>
+  <hr>
+  <div [innerHTML]="dataShow?.content"></div>
+</ion-content>

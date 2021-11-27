@@ -1,0 +1,26 @@
+<ion-header>
+  <mat-toolbar class="position-absolute" style="background: rgba(255,255,255,0); height: 80px; padding: 28px 0 0 0;">
+    <ion-menu-button menu="mains"></ion-menu-button>
+    <div>{{title}}</div>
+    <button mat-button class="ml-auto fa fa-chevron-circle-left" routerLink="/"></button>
+  </mat-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="pane container-fluid">
+    <br><br><br><br>
+    <div class="p-2">
+      <span class="text-light" style="font-size: 20px;">成绩：</span>
+      <span class="fa fa-star p-2" style="color: gold; font-size: 24px;" *ngFor="let one of correctAnswers, let i=index"></span>
+    </div>
+
+    <h5>点击按钮，根据读音在图片中点击正确的位置</h5>
+    <section style="text-align: center;" class="py-4">
+      <canvas id="canvas" style="border: 1px solid gray;">不支持canvas显示</canvas>
+    </section>
+    <div class="text-center">
+      <button *ngFor="let one of targetShape.elements" mat-raised-button color="accent" class="m-2" (click)="getItem(one.name)" [disabled]="correctAnswers.indexOf(one.name) !== -1">{{one.name}}</button>
+    </div>
+  </div>
+</ion-content>
+

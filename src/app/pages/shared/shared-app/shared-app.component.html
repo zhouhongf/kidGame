@@ -1,0 +1,187 @@
+<ion-header>
+    <mat-toolbar style="height: 80px; padding: 28px 0 0 0;">
+        <ion-menu-button menu="mains" color="dark"></ion-menu-button>
+    </mat-toolbar>
+</ion-header>
+
+<ion-content *ngIf="isDownload" color="dark">
+    <h5 class="text-center" style="margin-top: 20%;">下载进度：{{progress}}%</h5>
+    <br><br>
+    <div class="d-flex justify-content-center">
+        <mat-progress-spinner mode="determinate" color="accent" diameter="120" [value]="progress"></mat-progress-spinner>
+    </div>
+</ion-content>
+
+<ion-content *ngIf="!isDownload">
+    <div class="py-5" id="RONG" style="min-height: 500px;">
+        <div class="row">
+            <div class="col-sm-6 text-center py-4">
+                <img [src]="urlR" class="img-fluid rounded">
+                <div class="py-4">
+                    <h3>竞&nbsp;&nbsp;&nbsp;&nbsp;融</h3>
+                    <br>
+                    <h3 class="font-weight-bold">用竞融，掌金融</h3>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="text-center py-4">
+                    <h4>银行信息搜索引擎</h4>
+                    <br>
+                    <h5>基于大数据，提供银行信息聚合服务</h5>
+                    <br>
+                    <h5>新闻、公告、招聘、理财、财报</h5>
+                </div>
+                <div class="py-2 text-center">
+                    <button type="button" class="btn btn-dark" style="font-size: 30px; height: 60px;" (click)="downloadFile('JINGRONGAPP')">
+                        <div><span class="fa fa-android pr-3" style="font-size: 40px;"></span>安卓客户端下载</div>
+                    </button>
+                    <br><br>
+                    <a type="button" class="btn btn-dark" style="font-size: 30px; height: 60px;" href="https://apps.apple.com/cn/app/id1434482650" target="_blank">
+                        <div><span class="fa fa-apple pr-3" style="font-size: 40px;"></span>苹果客户端下载</div>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="py-5 bg-light" id="ENGLISH" style="min-height: 500px;">
+        <div class="row">
+            <div class="col-sm-6 text-center py-4">
+                <img [src]="urlE" class="img-fluid rounded">
+                <div class="py-4">
+                    <h3>学&nbsp;&nbsp;&nbsp;&nbsp;英&nbsp;&nbsp;&nbsp;&nbsp;语</h3>
+                    <br>
+                    <h3 class="font-weight-bold">英语单词学习</h3>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="text-center py-4">
+                    <h4>英语单词记忆与测试</h4>
+                    <br>
+                    <h5>一款简易的英语单词学习软件</h5>
+                    <br>
+                    <h5>根据录入课文内容，生成相应的考试题目</h5>
+                </div>
+                <div class="py-2 text-center">
+                    <button type="button" class="btn btn-dark" style="font-size: 30px; height: 60px;"
+                            (click)="downloadFile('ENGLISHAPP')">
+                        <div><span class="fa fa-android pr-3" style="font-size: 40px;"></span>安卓客户端下载</div>
+                    </button>
+                    <br><br>
+                    <a type="button" class="btn btn-dark" style="font-size: 30px; height: 60px;" href="https://apps.apple.com/cn/app/id1507907435" target="_blank">
+                        <div><span class="fa fa-apple pr-3" style="font-size: 40px;"></span>苹果客户端下载</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="py-5" id="HOUSE" style="min-height: 500px;">
+        <div class="row">
+            <div class="col-sm-6 text-center py-4">
+                <img [src]="urlH" class="img-fluid rounded">
+                <div class="py-4">
+                    <h3>查&nbsp;&nbsp;&nbsp;&nbsp;房&nbsp;&nbsp;&nbsp;&nbsp;价</h3>
+                    <br>
+                    <h3 class="font-weight-bold">全国房价，一掌通</h3>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="text-center py-4">
+                    <h4>全国房价信息查询平台</h4>
+                    <br>
+                    <h5>基于房产大数据，提供信息查询服务</h5>
+                    <br>
+                    <h5>暂不开放数据API接口，该应用仅供演示使用</h5>
+                </div>
+                <div class="py-2 text-center">
+                    <button type="button" class="btn btn-dark" style="font-size: 30px; height: 60px;"
+                            (click)="downloadFile('HOUSEAPP')">
+                        <div><span class="fa fa-android pr-3" style="font-size: 40px;"></span>安卓客户端下载</div>
+                    </button>
+                    <br><br>
+                    <button type="button" class="btn btn-dark" style="font-size: 30px; height: 60px;" disabled>
+                        <div><span class="fa fa-apple pr-3" style="font-size: 40px;"></span>苹果客户端下载</div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="py-5 bg-light" id="CHAT" style="min-height: 500px;">
+        <div class="row">
+            <div class="col-sm-6 text-center py-4">
+                <img [src]="urlC" class="img-fluid rounded">
+                <div class="py-4">
+                    <h3>茶&nbsp;&nbsp;&nbsp;&nbsp;厅</h3>
+                    <br>
+                    <h3 class="font-weight-bold">社交、聊天、办公</h3>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="text-center py-4">
+                    <h4>即时通讯、社交聊天</h4>
+                    <br>
+                    <h5>朋友圈分享、单聊、群聊</h5>
+                    <br>
+                    <h5>在线办公，网盘存储</h5>
+                </div>
+                <div class="py-2 text-center">
+                    <button type="button" class="btn btn-outline-dark" style="font-size: 30px; height: 60px;" disabled>
+                        <div>暂不提供下载</div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="py-5" id="MORGAGE" style="min-height: 500px;">
+        <div class="row">
+            <div class="col-sm-6 text-center py-4">
+                <img [src]="urlM" class="img-fluid rounded">
+                <div class="py-4">
+                    <h3>查&nbsp;&nbsp;&nbsp;&nbsp;贷&nbsp;&nbsp;&nbsp;&nbsp;款</h3>
+                    <br>
+                    <h3 class="font-weight-bold">抵押贷款竞价平台</h3>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="text-center py-4">
+                    <h4>银行抵押贷款比较</h4>
+                    <br>
+                    <h5>按揭贷款、抵押贷款</h5>
+                    <br>
+                    <h5>比额度、比利率、比效率</h5>
+                </div>
+                <div class="py-2 text-center">
+                    <button type="button" class="btn btn-outline-dark" style="font-size: 30px; height: 60px;" disabled>
+                        <div>暂不提供下载</div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="py-5 bg-light" id="SEARCH" style="min-height: 500px;">
+        <div class="row">
+            <div class="col-sm-6 text-center py-4">
+                <img [src]="urlS" class="img-fluid rounded">
+                <div class="py-4">
+                    <h3>搜&nbsp;&nbsp;&nbsp;&nbsp;查&nbsp;&nbsp;&nbsp;&nbsp;官</h3>
+                    <br>
+                    <h3 class="font-weight-bold">大数据挖掘</h3>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="text-center py-4">
+                    <h4>大数据搜索引擎私人定制</h4>
+                    <br>
+                    <h5>基础版本提供标准化的基础数据挖掘功能</h5>
+                    <br>
+                    <h5>VIP版本提供组件配置等高级功能</h5>
+                </div>
+                <div class="py-2 text-center">
+                    <button type="button" class="btn btn-outline-dark" style="font-size: 30px; height: 60px;" disabled>
+                        <div>暂不提供下载</div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</ion-content>

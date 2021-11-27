@@ -1,0 +1,33 @@
+<div *ngIf="typeIn === 'custom'">
+  <h2 mat-dialog-title class="text-center">{{theData['title']}}</h2>
+  <mat-dialog-content>
+    <mat-form-field [floatLabel]="'never'">
+      <input type="text" placeholder="请输入文字" matInput [formControl]="myInput" (change)="matchForbidden = false">
+      <mat-hint *ngIf="matchForbidden" style="color: crimson;">{{theData['alertWord']}}</mat-hint>
+    </mat-form-field>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-raised-button color="accent" (click)="doConfirm()" [disabled]="!myInput.valid">确认</button>
+    <br><br>
+    <button mat-raised-button mat-dialog-close>取消</button>
+  </mat-dialog-actions>
+</div>
+
+<div *ngIf="typeIn === 'standard'">
+  <h2 mat-dialog-title class="text-center">{{theData['title']}}</h2>
+  <mat-dialog-content>
+    <div>{{theData.bankLevel}}</div>
+    <div>{{theData.bankName}}</div>
+    <div>{{theData.risk?.name}}</div>
+    <div>{{theData.term?.name}}</div>
+    <div>{{theData.promise?.name}}</div>
+    <div>{{theData.fixed?.name}}</div>
+    <div *ngIf="theData.range">开始：{{theData.range?.start | date: 'yyyy年MM月dd日'}}</div>
+    <div *ngIf="theData.range">结束：{{theData.range?.end | date: 'yyyy年MM月dd日'}}</div>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-raised-button color="accent" (click)="doSearch()">确认</button>
+    <br><br>
+    <button mat-raised-button mat-dialog-close>取消</button>
+  </mat-dialog-actions>
+</div>
